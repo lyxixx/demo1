@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    .bg1 {
+        height: 50vh;
+        background-color: rgb(236, 226, 237);
+        position: relative
+    }
+    
+    .bg2 {
+        height: 50vh;
+        background-color: rgb(165, 165, 240);
+    }
+    
+    .nav {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background-color: rgb(247, 241, 241);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 10px;
+    }
+    
+    .nav span {
+        cursor: pointer;
+        padding: 5px;
+    }
+    
+    .nav span:nth-last-child(-n+2) {
+        color: blue;
+        font-size: 35px;
+        /*  position: absolute;
+        top: -1px;
+        right: 0; */
+        padding-bottom: 16px;
+    }
+    
+    .show {
+        width: 350px;
+        height: 70px;
+        transition: 0.8s;
+    }
+    
+    .show.hide {
+        height: 70px;
+        width: 80px;
+        color: blue;
+        font-size: 30px;
+        opacity: 0;
+    }
+    
+    .show .out {
+        display: none;
+    }
+    
+    .show.hide .in {
+        visibility: visible
+    }
+</style>
+
+<body>
+    <div class="bg1">
+        <div class="nav ">
+            <div id='show' class="show ">
+                <span class="">Home </span>
+                <span class="">Works </span>
+                <span class="">About</span>
+                <span class="">Contact</span>
+                <span class="in">×</span>
+                <span class="out">=</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="bg2"></div>
+    <script>
+        var In = document.querySelector('.in ');
+        var nav = document.querySelector('#show ')
+        In.addEventListener('click', function() {
+            console.log(1);
+            nav.classList.add('hide')
+            var out = document.querySelector('.out ')
+            out.addEventListener('click', function() {
+                console.log(2);
+                nav.classList.remove('hide')
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>
